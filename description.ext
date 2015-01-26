@@ -1,0 +1,85 @@
+author = "Epoch Mod Team";
+class Header
+{
+ gameType = Sandbox;
+ minPlayers = 1;
+ maxPlayers = 100;
+};
+respawn = "BASE";
+respawnDelay = 600;
+respawnDialog = 0;
+
+onLoadMission= "Epoch   Multi-missions V2.3 (en construction)";
+OnLoadIntro = "Bienvenue sur Arma3 EpochMod 0.252";
+loadScreen = "images\epochmod.jpg"; 
+OnLoadIntroTime = False;
+OnLoadMissionTime = False;
+onLoadName = "Epoch Mod";
+disabledAI = true;
+scriptedPlayer = 1;
+disableChannels[]={1,2,6};
+enableItemsDropping = 1;
+enableDebugConsole = 0;
+joinUnassigned = 0;
+respawnOnStart = 0;
+forceRotorLibSimulation = 1;
+
+corpseManagerMode = 1;
+corpseLimit = 10;
+corpseRemovalMinTime = 1200;
+corpseRemovalMaxTime = 3600;
+
+wreckManagerMode = 1;
+wreckLimit = 2;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 360;
+
+#include "TAA_name\GUI\TAA_INCLUDE.hpp"
+#include "TAA_name\GUI\TAA_ui_name.hpp"
+#include "TAA_name\GUI\TAA_ui_custom.hpp"
+
+class CfgRemoteExecCommands {};
+
+class RscTitles 
+  {		
+	#include "TAA_name\GUI\TAA_dynamic_name.hpp"
+	#include "dialog\statusBar.hpp"
+  };
+  
+
+class CfgSounds
+ {
+	sounds[] = {};
+	
+	class alarm_ramp {
+		name = "alarm_ramp";
+		sound[] = {"scripts\usableCargoRamp\sounds\alarm-ramp.ogg", 1, 1};
+		titles[] = {0, ""};
+	};
+	
+	class alarm_prepare {
+		name = "alarm_prepare";
+		sound[] = {"scripts\usableCargoRamp\sounds\alarm-prepare.ogg", 1, 1};
+		titles[] = {0, ""};
+	};
+	
+	class alarm_go {
+		name = "alarm_go";
+		sound[] = {"scripts\usableCargoRamp\sounds\alarm-go.ogg", 1, 1};
+		titles[] = {0, ""};
+	};
+};
+
+class cfgMusic
+{
+    class intro
+    {
+        name = "intro";
+        sound[] = {"sounds\IntroSong.ogg", db+1,1};
+    };
+};
+class Cam
+	{
+	   file ="scripts";
+	   class IntroCam {};
+	};
